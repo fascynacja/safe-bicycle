@@ -21,8 +21,9 @@ I have created this project as a proof of concept and a starting point which can
 - I have created 1 endpoint, which takes set of bicycles and return premium and sum insured calculations along with some bicycle properties.
 - Endpoint will call CalculationService which will do basic validation, dto-entity mappings and later on use the RuleEngine in order to run formulas defined in the groovy scripts.
 - In order to see the current API please run the application and check the page:
-  http://localhost:8080/swagger-ui/index.html 
-  
+ [ http://localhost:8080/swagger-ui/index.html](http://localhost:8080/api/v1/swagger-ui/index.html) 
+  ![image](https://github.com/fascynacja/safe-bicycle/assets/5450946/59e58713-ae6e-4c34-9631-ff8e22ff53a2)
+
  
 4) Possible optimisations and trade offs
 
