@@ -45,6 +45,7 @@ I have created a couple of tests for every layer (REST, Integration, JUnit Servi
   ```
   
 7) Notes
+   
 I have changed the BaseScript in the following line:
   ```
  ['VALUE_FROM': 0, 'VALUE_TO': 15, 'FACTOR_MIN': 1, 'FACTOR_MIN': 3]]
