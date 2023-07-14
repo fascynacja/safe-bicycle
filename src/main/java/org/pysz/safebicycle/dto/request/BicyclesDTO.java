@@ -12,5 +12,5 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BicyclesDTO {
-    List<BicycleDTO> bicycles;
+    private List<BicycleDTO> bicycles;
 }

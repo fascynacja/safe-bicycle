@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BicyclesResponseDTO {
-    List<BicycleResponseDTO> objects;
+    private List<BicycleResponseDTO> objects;
     @JsonSerialize(using = AmountSerializer.class)
-    BigDecimal premium;
+    private BigDecimal premium;
 }

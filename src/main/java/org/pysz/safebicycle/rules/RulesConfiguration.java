@@ -17,7 +17,7 @@ import java.util.Map;
 public class RulesConfiguration {
 
     @Value("${rules.path}")
-    public String rulesPath = "src/main/resources/rules/risk/";
+    String rulesPath = "src/main/resources/rules/risk/";
 
     @Bean
     RuleEngine ruleEngine() throws IOException {

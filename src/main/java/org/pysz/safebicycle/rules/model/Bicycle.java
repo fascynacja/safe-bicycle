@@ -14,11 +14,11 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 public class Bicycle {
-    String make;
-    String model;
-    Coverage coverage;
-    int manufactureYear;
-    BigDecimal sumInsured;
-    List<String> risks;
+    private String make;
+    private String model;
+    private Coverage coverage;
+    private int manufactureYear;
+    private BigDecimal sumInsured;
+    private List<String> risks;
 
 }

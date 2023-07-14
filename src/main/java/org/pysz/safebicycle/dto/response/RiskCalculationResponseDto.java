@@ -16,7 +16,7 @@ public class RiskCalculationResponseDto {
 
     String riskType;
     @JsonSerialize(using = AmountSerializer.class)
-    BigDecimal sumInsured;
+    private BigDecimal sumInsured;
     @JsonSerialize(using = AmountSerializer.class)
-    BigDecimal premium;
+    private BigDecimal premium;
 }

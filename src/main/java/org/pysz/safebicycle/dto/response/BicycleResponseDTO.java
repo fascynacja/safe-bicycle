@@ -16,11 +16,11 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BicycleResponseDTO {
-    HashMap<String, Object> attributes;
-    Coverage coverageType;
-    List<RiskCalculationResponseDto> risks;
+    private HashMap<String, Object> attributes;
+    private Coverage coverageType;
+    private List<RiskCalculationResponseDto> risks;
     @JsonSerialize(using = AmountSerializer.class)
-    BigDecimal sumInsured;
+    private BigDecimal sumInsured;
     @JsonSerialize(using = AmountSerializer.class)
-    BigDecimal premium;
+    private BigDecimal premium;
 }
