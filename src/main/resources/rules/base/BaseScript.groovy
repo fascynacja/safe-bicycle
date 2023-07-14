@@ -24,7 +24,7 @@ class BaseScript extends Script{
                 ['MAKE': 'Krush', 'VALUE_FROM': 0, 'VALUE_TO': 15, 'FACTOR_MIN': 0.93, 'FACTOR_MAX': 1.75],
                 ['MAKE': 'Megamo', 'VALUE_FROM': 0, 'VALUE_TO': 15, 'FACTOR_MIN': 1.1, 'FACTOR_MAX': 2.3],
                 ['MAKE': 'Sensa', 'VALUE_FROM': 0, 'VALUE_TO': 15, 'FACTOR_MIN': 0.8, 'FACTOR_MAX': 2.5],
-                ['VALUE_FROM': 0, 'VALUE_TO': 15, 'FACTOR_MIN': 1, 'FACTOR_MIN': 3]]
+                ['VALUE_FROM': 0, 'VALUE_TO': 15, 'FACTOR_MIN': 1, 'FACTOR_MAX': 3]]
     }
 
     ArrayList<LinkedHashMap<String, Serializable>> getRiskCountFactorData() {

@@ -15,18 +15,18 @@ class DecoratedBaseScript extends BaseScript {
     }
 
 
-    def BigDecimal sumInsuredFactor(BigDecimal riskSumInsured) {
+    BigDecimal sumInsuredFactor(BigDecimal riskSumInsured) {
 
         var sumInsuredFactors = sumInsuredFactors(riskSumInsured)
         if (sumInsuredFactors == null) {
-            return BigDecimal.ZERO; // TODO this is an assumption which needs to be claer out
+            return BigDecimal.ZERO // TODO this is an assumption which needs to be claer out
         }
         def factorMin = sumInsuredFactors[FACTOR_MIN]
         def factorMax = sumInsuredFactors[FACTOR_MAX]
         def valueTo = sumInsuredFactors[VALUE_TO]
         def valueFrom = sumInsuredFactors[VALUE_FROM]
         var sumInsuredFactor = factorMax - (factorMax - factorMin) * (valueTo - riskSumInsured) / (valueTo - valueFrom)
-        return sumInsuredFactor;
+        return sumInsuredFactor
     }
 
     // TODO what if suminsured does not find anything
@@ -43,7 +43,7 @@ class DecoratedBaseScript extends BaseScript {
         def valueFrom = bicycleAgeFactors[VALUE_FROM]
         def valueTo = bicycleAgeFactors[VALUE_TO]
         var bicycleAgeFactor = factorMax - (factorMax - factorMin) * (valueTo - ageActual) / (valueTo - valueFrom)
-        return bicycleAgeFactor;
+        return bicycleAgeFactor
     }
 
     def bicycleAgeFactors(int ageActual, String make, String model) {
@@ -59,7 +59,7 @@ class DecoratedBaseScript extends BaseScript {
                             map['VALUE_TO'] >= ageActual
                 }
         if (factorData != null) {
-            return factorData;
+            return factorData
         }
         factorData = getAgeFactorData()
                 .find { map ->
@@ -68,18 +68,18 @@ class DecoratedBaseScript extends BaseScript {
                             map['VALUE_TO'] >= ageActual
                 }
         if (factorData != null) {
-            return factorData;
+            return factorData
         }
         factorData = getAgeFactorData()
                 .find { map ->
                     map['VALUE_FROM'] <= ageActual &&
                             map['VALUE_TO'] >= ageActual
                 }
-        return factorData;
+        return factorData
     }
 
 
-    def double riskCountFactor(Bicycle bicycle) {
+    double riskCountFactor(Bicycle bicycle) {
         //TODO validation of risks, do they exist? if not then what should we do?
         def risksCount = bicycle.getRisks().size()
         def riskCountData = getRiskCountFactorData()
@@ -92,7 +92,7 @@ class DecoratedBaseScript extends BaseScript {
         def valueTo = riskCountData[VALUE_TO]
         def valueFrom = riskCountData[VALUE_FROM]
         var factor = factorMax - (factorMax - factorMin) * (valueTo - risksCount) / (valueTo - valueFrom)
-        return factor;
+        return factor
     }
 
 }

@@ -33,10 +33,6 @@ class CalculationServiceIntegrationTest {
     @Autowired
     CalculationService service;
 
-    @AfterEach
-    public void cleanUp() {
-
-    }
 
     // TODO add more test scenarios
     @Test
