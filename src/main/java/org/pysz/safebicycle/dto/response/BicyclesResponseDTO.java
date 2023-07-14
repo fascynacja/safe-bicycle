@@ -13,8 +13,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BicyclesResponseDTO
-{
+public class BicyclesResponseDTO {
     List<BicycleResponseDTO> objects;
     @JsonSerialize(using = AmountSerializer.class)
     BigDecimal premium;

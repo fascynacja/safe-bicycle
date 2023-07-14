@@ -1,6 +1,5 @@
 package org.pysz.safebicycle.service;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.pysz.safebicycle.dto.request.BicycleDTO;

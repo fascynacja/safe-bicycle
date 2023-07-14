@@ -15,8 +15,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BicycleResponseDTO
-{
+public class BicycleResponseDTO {
     HashMap<String, Object> attributes;
     Coverage coverageType;
     List<RiskCalculationResponseDto> risks;

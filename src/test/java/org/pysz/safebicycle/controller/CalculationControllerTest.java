@@ -19,11 +19,12 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 
+import static org.pysz.safebicycle.testdata.TestData.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.pysz.safebicycle.testdata.TestData.*;
+
 @WebMvcTest(CalculationController.class)
 class CalculationControllerTest {
 
@@ -43,23 +44,23 @@ class CalculationControllerTest {
         //given
         String json =
                 """
-                        {
-                        "bicycles" : [
-                          {
-                            "make" : "Pearl",
-                            "model" : "Gravel SL EVO",
-                            "coverage" : "EXTRA",
-                            "manufactureYear" : 2015,
-                            "sumInsured" : 1000,
-                            "risks" : [
-                              "THEFT",
-                              "DAMAGE",
-                              "THIRD_PARTY_DAMAGE"
-                            ]
-                          }
-                          ]
-                          }
-                     """;
+                           {
+                           "bicycles" : [
+                             {
+                               "make" : "Pearl",
+                               "model" : "Gravel SL EVO",
+                               "coverage" : "EXTRA",
+                               "manufactureYear" : 2015,
+                               "sumInsured" : 1000,
+                               "risks" : [
+                                 "THEFT",
+                                 "DAMAGE",
+                                 "THIRD_PARTY_DAMAGE"
+                               ]
+                             }
+                             ]
+                             }
+                        """;
         BicyclesResponseDTO responseDTO = BicyclesResponseDTO.builder()
                 .objects(bicyclesList())
                 .premium(BICYCLES_ALL_PREMIUM)
@@ -89,23 +90,23 @@ class CalculationControllerTest {
         //given
         String json =
                 """
-                        {
-                        "bicycles" : [
-                          {
-                            "make" : "Pearl",
-                            "model" : "Gravel SL EVO",
-                            "coverage" : "EXTRA",
-                            "manufactureYear" : 2015,
-                            "sumInsured" : 1000,
-                            "risks" : [
-                              "THEFT",
-                              "DAMAGE",
-                              "THIRD_PARTY_DAMAGE"
-                            ]
-                          }
-                          ]
-                          }
-                     """;
+                           {
+                           "bicycles" : [
+                             {
+                               "make" : "Pearl",
+                               "model" : "Gravel SL EVO",
+                               "coverage" : "EXTRA",
+                               "manufactureYear" : 2015,
+                               "sumInsured" : 1000,
+                               "risks" : [
+                                 "THEFT",
+                                 "DAMAGE",
+                                 "THIRD_PARTY_DAMAGE"
+                               ]
+                             }
+                             ]
+                             }
+                        """;
 
         BicyclesDTO bicycles = objectMapper.readValue(json, BicyclesDTO.class);
         Mockito.when(service.calculate(bicycles)).thenThrow(new ApiException("message"));
@@ -122,7 +123,7 @@ class CalculationControllerTest {
     }
 
     private static String round(BigDecimal amount) {
-        return  amount.setScale(2, BigDecimal.ROUND_HALF_UP).toString();
+        return amount.setScale(2, BigDecimal.ROUND_HALF_UP).toString();
     }
 
     private List<BicycleResponseDTO> bicyclesList() {

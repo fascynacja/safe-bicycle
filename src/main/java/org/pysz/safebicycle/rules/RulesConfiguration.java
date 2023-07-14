@@ -28,7 +28,7 @@ public class RulesConfiguration {
             throw new RuleEngineException("Provided path to risks directory is invalid: " + rulesPath);
         }
         File[] files = ResourceUtils.getFile(rulesPath).listFiles();
-        if (files == null){
+        if (files == null) {
             log.error("Provided path to risks directory is invalid: {}", rulesPath); //fail fast , context will not load
             throw new RuleEngineException("Provided path to risks directory is invalid: " + rulesPath);
         }
